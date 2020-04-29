@@ -5,6 +5,7 @@
     </div>
 </template>
 <script>
+    import { mapActions } from 'vuex'
     export default {
         data(){
             return {
@@ -12,8 +13,9 @@
             }
         },
         methods: {
+            ...mapActions('$_main', ['testServer']),
             handleSearch() {
-
+                this.testServer();
             }
         }
     }

@@ -12,6 +12,12 @@ export default {
 
     },
     actions: {
+        async testServer() {
+            await quRequest.send('/testServer', {
+                page: 4,
+                pageSize: 10
+            })
+        },
         async getData() {
             await quRequest.send('/getPicInfo', {
                 page: 1,

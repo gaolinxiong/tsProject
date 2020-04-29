@@ -7,36 +7,12 @@ import '@antv/g2';
 import main from "@/store/main";
 import Router from 'vue-router';
 import Vuex from 'vuex';
-import managePage from '@/pages/components/managePage/index.vue';
-import showPage from '@/pages/components/showPage/index.vue';
-import app from '@/pages/App';
-
-
+import routes from "@/router";
 Vue.use(Router);
 Vue.use(Vuex);
 Vue.use(ElementUI);
 // Vue.prototype.$http= axios;
 
-
-const routes = [
-    {
-        path: '',
-        redirect: '/showPage',
-        component: app,
-        children: [
-            {
-                name: 'showPage',
-                path: '/showPage',
-                component: showPage,
-            },
-            {
-                name: 'managePage',
-                path: '/managePage',
-                component: managePage,
-            }
-        ]
-    }
-];
 
 const router = new Router({routes});
 
