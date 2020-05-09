@@ -116,7 +116,10 @@ const configFun = env => {
         },
         plugins: [
             new VueLoaderPlugin(),
-            new HtmlWebpackPlugin(),
+            new HtmlWebpackPlugin({
+                title:'毕设项目',
+                template: './index.html', // 源模板文件
+            }),
             new webpack.HotModuleReplacementPlugin(),
             new miniCssExtractPlugin({
                 filename: '[name].css',// 分离后的文件名

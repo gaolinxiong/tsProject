@@ -11,6 +11,7 @@ import routes from "@/router";
 Vue.use(Router);
 Vue.use(Vuex);
 Vue.use(ElementUI);
+
 // Vue.prototype.$http= axios;
 
 

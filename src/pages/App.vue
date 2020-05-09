@@ -7,19 +7,8 @@
     import { mapState } from 'vuex'
     export default {
         data(){
-            return {
-                text:'hello webpack111!！！'
-            }
+            return {}
         },
-        computed: {
-            ...mapState('$_main', ['name'])
-        },
-        methods: {
-
-        },
-        mounted() {
-            console.log(this.name)
-        }
     }
 </script>
 
