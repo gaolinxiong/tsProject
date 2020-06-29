@@ -43,9 +43,10 @@
 
                 chart.data(data);
 
-                chart.scale('value', {
+                chart.scale('percent', {
                     formatter: (val) => {
-                        val = val + '%';
+                        val = (val * 100).toFixed(0) + '%';
+                        console.log(val);
                         return val;
                     },
                 });
@@ -57,19 +58,29 @@
 
                 chart
                     .interval()
-                    .position('value')
-                    .color('type')
-                    .label('value', {
-                        content: (data) => {
-                            return `${data.type}: ${data.value * 100}%`;
+                    .adjust('stack')
+                    .position('percent')
+                    .color('item')
+                    .label('percent', {
+                        offset: -40,
+                        style: {
+                            textAlign: 'center',
+                            fontSize: 16,
+                            shadowBlur: 2,
+                            shadowColor: 'rgba(0, 0, 0, .45)',
+                            fill: '#fff',
                         },
                     })
-                    .adjust('stack');
+                    .tooltip('item*percent', (item, percent) => {
+                        percent = (percent * 100).toFixed(0) + '%';
+                        return {
+                            name: item,
+                            value: percent,
+                        };
+                    });
 
                 chart.interaction('element-active');
-
                 chart.render();
-
             },
             async getChartSourceData() {
                 await this.getChartSource();

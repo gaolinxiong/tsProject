@@ -1,4 +1,5 @@
 import apiRequest from "@/common/apiRequest";
+import da from "element-ui/src/locale/lang/da";
 const quRequest = new apiRequest();
 export default {
     namespaced: true,
@@ -29,11 +30,13 @@ export default {
             state.tableLogin = data
         },
         updateChartSource(state, data) {
-            data.data.forEach((item) => {
-                item['value'] = parseFloat((item['val']/data.total*100).toFixed(2));
+            data.forEach((item) => {
+                let year = item.item.substring(0,4);
+                let month = item.item.substring(5, 7);
+                let day = item.item.substring(8, 10);
+                item['item'] = `${year}年${month}月${day}日`
             });
-            console.log(data)
-            state.chartData = data.data;
+            state.chartData = data;
         },
         updateManageInfo(state, data) {
             state.manageData = data
@@ -78,14 +81,12 @@ export default {
             }
         },
         async getChartSource({commit, state, dispatch}, payload = {}) {
-            let {code, data, total} =  await quRequest.send('/getChartSource', payload);
+            let {code, data } =  await quRequest.send('/getChartSource', payload);
             if (code !== 200) {
                 return;
             }
-            commit('updateChartSource', {
-                data: data,
-                total: total
-            })
+            console.log(data);
+            commit('updateChartSource', data);
         },
         async getManageInfo({commit, state, dispatch}, payload = {}) {
             let {code, data, total} =  await quRequest.send('/getManageInfo', payload);

@@ -1,9 +1,9 @@
 <template>
     <div class="loginPage">
-        <span class="title">图书借阅系统</span>
+        <span class="title">壁纸管理系统</span>
         <em class="img"></em>
         <div class="card">
-            <h1>图书借阅系统{{ loginType ? '管理员登录' : '用户登录'}}</h1>
+            <h1>壁纸管理系统</h1>
             <el-form ref="form" label-width="110px">
                 <el-form-item label="用户名:">
                     <el-input placeholder="请输入用户名" v-model="username"></el-input>
@@ -14,7 +14,6 @@
                 </el-form-item>
 
                 <el-button class="loginButton" @click="handleClickLogin" type="primary">登录</el-button>
-                <el-button class="changeType" @click="changeLoginType" type="text">{{ loginType ? '用户登录' : '管理员登录'}}</el-button>
             </el-form>
         </div>
     </div>

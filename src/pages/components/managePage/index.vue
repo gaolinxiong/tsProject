@@ -15,7 +15,7 @@
                         prop="pic_url"
                         label="图片地址">
                     <template slot-scope="scope">
-                        <p class="picClass" v-bind:style="{backgroundImage: `url(${scope.row.pic_url})`}"></p>
+                        <img class="picStyle" :src="scope.row.pic_url" />
                     </template>
                 </el-table-column>
                 <el-table-column
@@ -30,7 +30,7 @@
                         prop="greypic_url"
                         label="灰图图片地址">
                     <template slot-scope="scope">
-                        <p class="picClass" v-bind:style="{backgroundImage: `url(${scope.row.greypic_url})`}"></p>
+                        <img class="picStyle" :src="scope.row.greypic_url" />
                     </template>
                 </el-table-column>
                 <el-table-column
