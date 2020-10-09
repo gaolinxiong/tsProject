@@ -11,6 +11,15 @@ import routes from "@/router";
 Vue.use(Router);
 Vue.use(Vuex);
 Vue.use(ElementUI);
+import VueSocketIO from 'vue-socket.io'
+
+Vue.use(new VueSocketIO({
+    debug: true,
+    // 服务器端地址
+    connection: 'http://localhost:3000',
+    vuex: {
+    }
+}));
 
 // Vue.prototype.$http= axios;
 

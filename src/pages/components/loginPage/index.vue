@@ -55,6 +55,15 @@
         },
         mounted() {
             this.init();
+            this.$socket.emit('login',{
+              username: 'username',
+              password: 'password'
+            });
+
+  //接收服务端的信息
+            this.sockets.subscribe('relogin', (data) => {
+              console.log('123', data)
+            })
         }
     }
 </script>
