@@ -4,17 +4,13 @@
   "description": "毕业设计vue项目",
   "main": "index.js",
   "scripts": {
-    "eslint": "$(git diff master --name-only | egrep '\\.(js|vue)$') | xargs $(npm bin)/eslint",
     "dev": "webpack-dev-server --env.NODE_ENV=development --config webpack.config.js",
     "start": "npm run dev",
     "build": "webpack --mode production --env.NODE_ENV=production",
-    "inspect": "node js-inspect.js"
+    "precommit": "lint-staged"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "sh commitlint.sh && commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "sh precommit.sh && lint-staged && npm run inspect"
-    }
+  "lint-staged": {
+    "src/**/*.js": "eslint"
   },
   "keywords": [
     "project"
@@ -41,6 +37,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-vue": "^7.1.0",
     "html-webpack-plugin": "^4.0.4",
+    "husky": "^4.3.0",
     "less-loader": "^5.0.0",
     "lint-staged": "^10.5.1",
     "mini-css-extract-plugin": "^0.9.0",
@@ -68,6 +65,7 @@
     "element-ui": "^2.13.1",
     "file-loader": "^6.0.0",
     "less": "^3.11.1",
+    "prettier": "^2.2.0",
     "scss": "^0.2.4",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",

@@ -46,7 +46,7 @@ export default {
         async getData ({ commit, state, dispatch }, payload = {}) {
             commit('updateTableLoading', true)
             const { code, data, message } = await quRequest.send('/getPicInfo', payload)
-            if (code != 200) {
+            if (code !== 200) {
                 message && alert(message)
                 return
             }
