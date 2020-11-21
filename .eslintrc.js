@@ -1,27 +1,60 @@
-// https://eslint.org/docs/user-guide/configuring
 module.exports = {
-    //默认情况下，ESLint 会在所有父级目录里寻找配置文件，一直到根目录。如果你想要你所有项目都遵循一个特定的约定时，这将会很有用，但有时候会导致意想不到的结果。为了将 ESLint 限制到一个特定的项目，在你项目根目录下的 package.json 文件或者 .eslintrc.* 文件里的 eslintConfig 字段下设置 "root": true。ESLint 一旦发现配置文件中有 "root": true，它就会停止在父级目录中寻找。
-    root: true,
-    parser: 'babel-eslint',
+    root: true, // 指定跟路径
     parserOptions: {
-        sourceType: 'module'
+        parser: 'babel-eslint'  // 解析器
     },
     env: {
-        browser: true,
+        browser: true  // 浏览器启用
     },
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    extends: 'standard',
+    extends: [
+        'plugin:vue/essential', // vue基本规则
+        'standard'  // js标准规则
+        // https://standardjs.com/rules-zhcn.html#javascript-standard-style
+    ],
     // required to lint *.vue files
     plugins: [
-        'html'
+        'import',   // eslint-plugin-import
+        'vue' // 支持vue文件
     ],
     // add your custom rules here
-    'rules': {
-        // allow paren-less arrow functions 要求箭头函数的参数使用圆括号
-        'arrow-parens': 0,
-        // allow async-await 强制 generator 函数中 * 号周围使用一致的空格
-        'generator-star-spacing': 0,
+    rules: {
+        'indent': ['error', 4], // 缩进宽度4个空格
+        'comma-dangle': 'off',  // 允许行末逗号
+        'no-constant-condition': 'off',  // 允许常量作为表达式条件
+        'no-delete-var': 'off', // 允许使用delete
+        'no-extend-native': 'off',  // 允许扩展原生对象
+        'no-floating-decimal': 'off',   //  允许省去小数点前的0
+        'no-multi-str': 'off',  // 允许多行字符串
+        'semi': 'off',  // 允许使用分号
+
+
+        // allow async-await
+        'generator-star-spacing': 'off',  // 关闭
+        // 最大长度 120
+        'max-len': [
+            'warn',
+            {
+                'code': 120,
+                'ignoreComments': true,
+                'ignoreStrings': true,
+                'ignoreTemplateLiterals': true,
+                'ignoreUrls': true
+            }
+        ],
+        // 最大行数 500
+        'max-lines': [
+            'warn',
+            {
+                'max': 500,
+                'skipBlankLines': true,
+                'skipComments': true
+            }
+        ],
+        // 要求使用 let 或 const 而不是 var
+        'no-var': [
+            'error'
+        ],
         // allow debugger during development
-        'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
     }
 }
