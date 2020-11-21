@@ -1,5 +1,4 @@
 import apiRequest from '@/common/apiRequest'
-import da from 'element-ui/src/locale/lang/da'
 const quRequest = new apiRequest()
 export default {
   namespaced: true,
@@ -63,7 +62,7 @@ export default {
     },
     async loginVerify ({ commit, state, dispatch }, payload = {}) {
       const { code } = await quRequest.send('/loginVerify', payload)
-      if (code == 200) {
+      if (code === 200) {
         commit('updateTableLogin', true)
       } else {
         commit('updateTableLogin', false)
@@ -88,7 +87,7 @@ export default {
       commit('updateChartSource', data)
     },
     async getManageInfo ({ commit, state, dispatch }, payload = {}) {
-      const { code, data, total } = await quRequest.send('/getManageInfo', payload)
+      const { code, data } = await quRequest.send('/getManageInfo', payload)
       if (code !== 200) {
         return
       }
