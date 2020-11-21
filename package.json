@@ -4,6 +4,7 @@
   "description": "毕业设计vue项目",
   "main": "index.js",
   "scripts": {
+    "eslint": "$(git diff master --name-only | egrep '\\.(js|vue)$') | xargs $(npm bin)/eslint",
     "dev": "webpack-dev-server --env.NODE_ENV=development --config webpack.config.js",
     "start": "npm run dev",
     "build": "webpack --mode production --env.NODE_ENV=production",
