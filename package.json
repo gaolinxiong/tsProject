@@ -10,7 +10,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.js": "eslint src"
+    "src/**/*.js": "eslint"
   },
   "keywords": [
     "project"
