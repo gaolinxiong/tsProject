@@ -16,25 +16,6 @@ module.exports = {
         'import',   // eslint-plugin-import
         'vue' // 支持vue文件
     ],
-    overrides: [{
-        files: ['**/*.ts'],
-        'parser': 'vue-eslint-parser',
-        // 'parserOptions': {
-        //     'parser': '@typescript-eslint/parser'
-        // },
-        // rules: {
-        //     '@typescript-eslint/no-unused-vars': [
-        //         'error',
-        //         {
-        //             vars: 'all',
-        //             args: 'none',
-        //             ignoreRestSiblings: true
-        //         }
-        //     ],
-        //     '@typescript-eslint/no-var-requires': 'off',
-        //     '@typescript-eslint/prefer-for-of': 'off',
-        // }
-    }],
     // add your custom rules here
     rules: {
         'indent': ['error', 4, {'SwitchCase': 1}], // 缩进宽度4个空格

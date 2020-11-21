@@ -1,4 +1,5 @@
 import apiRequest from '@/common/apiRequest'
+/* eslint-disable */
 const quRequest = new apiRequest()
 export default {
     namespaced: true,
