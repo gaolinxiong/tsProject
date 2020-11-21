@@ -46,7 +46,7 @@ export default {
         async getData ({ commit, state, dispatch }, payload = {}) {
             commit('updateTableLoading', true)
             const { code, data, message } = await quRequest.send('/getPicInfo', payload)
-            if (code != 200) {
+            if (code !== 200) {
                 message && alert(message)
                 return
             }
@@ -63,7 +63,7 @@ export default {
         },
         async loginVerify ({ commit, state, dispatch }, payload = {}) {
             const { code } = await quRequest.send('/loginVerify', payload)
-            if (code === 200) {
+            if (code == 200) {
                 commit('updateTableLogin', true)
             } else {
                 commit('updateTableLogin', false)
