@@ -14,11 +14,11 @@ Vue.use(Vuex)
 Vue.use(ElementUI)
 
 Vue.use(new VueSocketIO({
-  debug: true,
-  // 服务器端地址
-  connection: 'http://localhost:3000',
-  vuex: {
-  }
+    debug: true,
+    // 服务器端地址
+    connection: 'http://localhost:3000',
+    vuex: {
+    }
 }))
 
 // Vue.prototype.$http= axios;
@@ -26,16 +26,16 @@ Vue.use(new VueSocketIO({
 const router = new Router({ routes })
 
 const store = new Vuex.Store({
-  modules: {
-    $_main: main
-  }
+    modules: {
+        $_main: main
+    }
 })
 
 const root = document.createElement('div')
 document.body.appendChild(root)
 
 new Vue({
-  router,
-  store,
-  render: (h) => h(App)
+    router,
+    store,
+    render: (h) => h(App)
 }).$mount(root)

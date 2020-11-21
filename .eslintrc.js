@@ -16,9 +16,28 @@ module.exports = {
         'import',   // eslint-plugin-import
         'vue' // 支持vue文件
     ],
+    overrides: [{
+        files: ['**/*.ts'],
+        'parser': 'vue-eslint-parser',
+        // 'parserOptions': {
+        //     'parser': '@typescript-eslint/parser'
+        // },
+        // rules: {
+        //     '@typescript-eslint/no-unused-vars': [
+        //         'error',
+        //         {
+        //             vars: 'all',
+        //             args: 'none',
+        //             ignoreRestSiblings: true
+        //         }
+        //     ],
+        //     '@typescript-eslint/no-var-requires': 'off',
+        //     '@typescript-eslint/prefer-for-of': 'off',
+        // }
+    }],
     // add your custom rules here
     rules: {
-        'indent': ['error', 4], // 缩进宽度4个空格
+        'indent': ['error', 4, {'SwitchCase': 1}], // 缩进宽度4个空格
         'comma-dangle': 'off',  // 允许行末逗号
         'no-constant-condition': 'off',  // 允许常量作为表达式条件
         'no-delete-var': 'off', // 允许使用delete
