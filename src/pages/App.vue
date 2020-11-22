@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <router-view></router-view>
+        高林雄
     </div>
 </template>
 <script>

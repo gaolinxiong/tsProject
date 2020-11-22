@@ -30,10 +30,22 @@ const configFun = env => {
             alias: {
                 '@': path.resolve('src')
             },
-            extensions: ['.js', '.css', '.less', '.vue']
+            extensions: ['.ts', '.tsx', '.js', '.css', '.less', '.vue', '.json']
         },
         module: {
             rules:[
+                { // 加入对文件的ts识别
+                    test: /.ts$/,
+                    enforce: 'pre',
+                    loader: 'tslint-loader'
+                },
+                {
+                    test: /.tsx?$/,
+                    loader: 'ts-loader',
+                    options: {
+                        appendTsSuffixTo: [/.vue$/],
+                    }
+                },
                 {
                     test: /\.(js|vue)$/,
                     loader: 'eslint-loader',
