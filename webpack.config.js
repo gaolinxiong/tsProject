@@ -10,7 +10,7 @@ const configFun = env => {
     return {
         mode: env.NODE_ENV,
         entry: {
-            index: './src/index.js'
+            index: './src/index.ts'
         },
         devtool: 'inline-cheap-source-map',
         devServer: {
@@ -30,7 +30,7 @@ const configFun = env => {
             alias: {
                 '@': path.resolve('src')
             },
-            extensions: ['.ts', '.tsx', '.js', '.css', '.less', '.vue', '.json']
+            extensions: ['.js', '.css', '.less', '.vue', '.json', '.ts', '.tsx']
         },
         module: {
             rules:[

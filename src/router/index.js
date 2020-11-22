@@ -1,5 +1,5 @@
 
-import app from '@/pages/App'
+import app from '@/App'
 
 const routes = [
     {

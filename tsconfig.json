@@ -1,17 +1,24 @@
 {
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
-    "module": "system",
-    "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "outFile": "../../built/local/tsc.js",
-    "sourceMap": true
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "noImplicitAny": false,
+    "strictFunctionTypes": false,
+    "module": "esnext",
+    "target": "es5",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "lib": ["dom", "es5", "es2015.promise"],
+    "sourceMap": true,
+    "pretty": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*", "src/*"]
+    },
+    "typeRoots": ["./src/types"]
+  }
 }
