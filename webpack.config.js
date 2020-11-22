@@ -47,15 +47,6 @@ const configFun = env => {
                     }
                 },
                 {
-                    test: /\.(js|vue)$/,
-                    loader: 'eslint-loader',
-                    enforce: 'pre',
-                    include: [path.resolve('src'), path.resolve('test')],
-                    options: {
-                        formatter: require('eslint-friendly-formatter')
-                    }
-                },
-                {
                     test: /\.js$/,
                     exclude: /node_modules/,
                     loader: 'babel-loader'
