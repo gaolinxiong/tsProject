@@ -1,5 +1,5 @@
 {
-  "name": "grade-project",
+  "name": "ts-project",
   "version": "1.0.0",
   "description": "毕业设计vue项目",
   "scripts": {
@@ -12,7 +12,7 @@
     "src/**/*.js": "eslint"
   },
   "bin": {
-    "lbs": "./bin/lbs.js"
+    "lbs": "/bin/lib.js"
   },
   "keywords": [
     "project"
