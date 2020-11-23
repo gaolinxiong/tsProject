@@ -6,7 +6,7 @@
     "dev": "webpack-dev-server --env.NODE_ENV=development --config webpack.config.js",
     "start": "npm run dev",
     "build": "webpack --mode production --env.NODE_ENV=production",
-    "precommit": "lint-staged"
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "src/**/*.js": "eslint"
