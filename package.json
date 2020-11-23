@@ -11,9 +11,6 @@
   "lint-staged": {
     "src/**/*.js": "eslint"
   },
-  "bin": {
-    "lbs": "./bin/lib.js"
-  },
   "keywords": [
     "project"
   ],
