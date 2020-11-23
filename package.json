@@ -11,6 +11,9 @@
   "lint-staged": {
     "src/**/*.js": "eslint"
   },
+  "bin": {
+    "frmay": "bin/ftmay"
+  },
   "keywords": [
     "project"
   ],
