@@ -68,7 +68,7 @@ export default {
         },
         async loginVerify ({ commit, state, dispatch }, payload = {}) {
             const { code } = await quRequest.send('/loginVerify', payload);
-            if (code === 200) {
+            if (code == 200) {
                 commit('updateTableLogin', true);
             } else {
                 commit('updateTableLogin', false);
