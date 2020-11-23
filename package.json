@@ -12,7 +12,7 @@
     "src/**/*.js": "eslint"
   },
   "bin": {
-    "lbs": "/bin/lib.js"
+    "lbs": "./bin/lib.js"
   },
   "keywords": [
     "project"
