@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-// const { program } = require("commander")
-//
-// program.command('init [projectName]','init project')
 const pkg = require("./../package.json")
 const { program } = require("commander")
 
