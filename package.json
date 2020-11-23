@@ -1,7 +1,7 @@
 {
   "name": "ts-project",
   "version": "1.0.0",
-  "description": "毕业设计vue项目",
+  "description": "ts项目",
   "scripts": {
     "dev": "webpack-dev-server --env.NODE_ENV=development --config webpack.config.js",
     "start": "npm run dev",
